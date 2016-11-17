@@ -1,0 +1,1 @@
+.char-count{opacity:0;visibility:hidden;color:green;transition:opacity .3s ease,visibility .3s ease}.char-count.show{opacity:1;visibility:visible}.warn{color:#F60}.superwarn{color:#D40D12}

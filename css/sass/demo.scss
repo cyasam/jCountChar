@@ -1,0 +1,254 @@
+
+/*
+ * jCountChar - jQuery Character Count Plugin Demo Page
+ *
+ * Copyright 2016, CAGDAS ISIK
+ * Free to use and abuse under the MIT license.
+ * http://www.opensource.org/licenses/mit-license.php
+ * 
+ * 9 November 2016
+ */
+
+/* Plugin Demo Page Styles */
+
+*, *:before, *:after { box-sizing: border-box; }
+
+/* Clearfix 
+ * add to floating elements which should not float afterthem
+*/ 
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/* General Styles */
+
+body { 
+	margin:0; 
+	padding:20px 0; 
+	font:14px/1.1 Arial, Helvetica, sans-serif; 
+	background-color:#E0E0E0; 
+}
+
+h1 { 
+	margin:0; 
+	margin-bottom:25px; 
+	font-size:25px; 
+}
+
+h2 { 
+	margin:0; 
+	margin-bottom:20px; 
+	font-size:22px; 
+}
+
+p {
+	margin:7px 0;
+	line-height:1.5;
+}
+
+a {
+	color:#F60;
+}
+
+textarea { 
+	display:block; 
+	width:100%; 
+	padding:5px 5px 30px; 
+	background-color:#F9F9F9; 
+	font:12px Arial, Helvetica, sans-serif; 
+	resize:vertical; 
+	overflow:auto; 
+	border:1px solid #D3D3D3; 
+	transition:box-shadow 0.2s ease, background 0.2s ease; 
+}
+
+select { 
+	width:150px; 
+	font-size:12px; 
+	padding:5px; 
+	height: 30px; 
+	border:1px solid #D3D3D3; 
+	background-color:#F9F9F9; 
+	transition:all 0.2s ease; 
+}
+
+input[type="text"],
+input[type="number"] { 
+	width:138px; 
+	padding:5px; 
+	height:30px; 
+	font-size:12px; 
+	background-color:#F9F9F9; 
+	border:1px solid #D3D3D3; 
+	transition:all 0.2s ease; 
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus, 
+textarea:focus, 
+select:focus {
+	background-color:#F2F2F2;
+	box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.1);
+	outline:none; 
+}
+
+ul.errorMessage { 
+	clear:both; 
+}
+
+.error { 
+	border:2px solid #F00 !important; 
+}
+
+.submit { 
+	float:left;
+	margin:10px 10px 0 0; 
+	padding:8px 10px; 
+	font:bold 13px Arial, Helvetica, sans-serif; 
+	background-color: #F60; 
+	color: #fff; 
+	border:none; 
+	opacity:0.8; 
+	border-radius: 3px;
+	box-shadow:0 0 1px rgb(0,0,0);
+	cursor:pointer;
+	outline:none;
+	
+	&:active {
+		box-shadow:inset 0 0 5px rgb(0,0,0);
+	}
+}
+
+.column-md-6 {
+	float: left;
+	width: 50%;
+}
+
+.countShow {
+	display:none;
+}
+
+/* Layout */
+
+#wrapper { 
+	width:910px; 
+	padding:25px; 
+	min-height:375px; 
+	margin:0 auto; 
+	background-color:#fff; 
+	border-radius: 10px; 
+	box-shadow:0 0 10px rgba(0,0,0,0.5);
+}
+
+.options { 
+	float:right; 
+	width:360px; 
+	margin-left: 30px; 
+	
+	.row { 
+		margin-bottom:5px;
+	}
+
+	.label, .value { 
+		float:left;
+	}
+
+	.label {
+		width:145px; 
+		margin-right:10px; 
+		line-height:28px; 
+	}
+}
+
+#demo {
+	
+	.label { 
+		font-size:14px;
+	}
+
+	.demo-block {
+		padding-bottom:30px; 
+		margin-bottom:30px; 
+		border-bottom:1px solid #D3D3D3; 
+
+		.textarea-block {
+			float:left; 
+			width:470px;
+
+			.text-area {
+				min-height:188px;
+				font-size: 14px;
+			}
+
+			.text-area.count-char-2 {
+				min-height:320px;
+			}
+		}
+
+		.textarea-wrap {
+			position:relative;
+
+			.char-count {
+				position: absolute;
+				left: 50%;
+				bottom:0;
+				z-index: 10;
+				text-align: center;
+				min-width: 40px;
+				font-size:12px;
+				background-color:#fff;
+				padding:5px;
+				border:1px solid #D3D3D3;
+				transform: translate(-50%, 0);
+			}
+		}
+	}
+}
+
+#documentation { 
+	margin-bottom:30px; 
+	border-bottom:1px solid #D3D3D3; 
+	
+	.section { 
+		margin-bottom:40px; 
+
+		p { 
+			margin:0 0 15px 0;
+			line-height: 1.5;
+		}
+
+		.code { 
+			display:inline-block; 
+			padding:3px 10px; 
+			background-color:#F0F0F0; 
+			font:14px Georgia, "Times New Roman", Times, serif; 
+		}
+	}
+
+	.label, .info { 
+		display: inline-block; 
+		vertical-align: top; 
+	}
+}
+
+#footer { 
+	text-align:center; 
+	padding-bottom:12px; 
+	
+	a { 
+		color: #000; 
+		text-decoration:none; 
+	} 
+
+	a:hover {
+		color:#5C5C5C; 
+	}
+}
+

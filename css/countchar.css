@@ -1,0 +1,32 @@
+/*
+ * jCountChar - jQuery Character Count Plugin v1.0
+ *
+ * Copyright 2016, CAGDAS ISIK
+ * Free to use and abuse under the MIT license.
+ * http://www.opensource.org/licenses/mit-license.php
+ * 
+ * 9 November 2016
+ */
+/* Plugin Styles */
+/* line 13, sass/countchar.scss */
+.char-count {
+  opacity: 0;
+  visibility: hidden;
+  color: green;
+  transition: opacity 300ms ease,visibility 300ms ease;
+}
+/* line 19, sass/countchar.scss */
+.char-count.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* line 25, sass/countchar.scss */
+.warn {
+  color: #F60;
+}
+
+/* line 29, sass/countchar.scss */
+.superwarn {
+  color: #D40D12;
+}

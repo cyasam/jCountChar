@@ -1,0 +1,249 @@
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>jCountChar - jQuery Character Count Plugin</title>
+    <link href="css/countchar.min.css" type="text/css" rel="stylesheet" />
+    <link href="css/demo.min.css" type="text/css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div id="wrapper">
+      <h1>CountChar - jQuery Character Count Plugin v1.0 - <a target="_blank" href="https://github.com/cyasam/jCountChar">Plugin Github Page</a></h1>
+      <div id="demo" class="clearfix">
+
+        <div class="demo-block clearfix">
+
+          <div class="textarea-block">
+            <div class="textarea-wrap">
+              <textarea class="text-area count-char" data-jchar-name="char-count">Hello World!</textarea>
+              <div class="char-count" data-jchar-select="char-count"></div>
+            </div>
+          </div>
+
+          <div class="options">
+            <form class="plugin-form" action="" novalidate="novalidate">
+
+              <div class="row clearfix">
+                <div class="label">Type</div>
+                <div class="value">
+                  <select class="type">
+                    <option value="default" selected="selected">default</option>
+                    <option value="twitter">twitter</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="row clearfix">
+                <div class="label">Karakter Limiti</div>
+                <div class="value">
+                  <input type="number" class="charLimit" value="50" />
+                </div>
+              </div>
+
+              <div class="row clearfix">
+                <div class="label">Uyarı Limiti</div>
+                <div class="value">
+                  <input type="number" class="warning" value="20" />
+                </div>
+              </div>
+
+              <div class="row clearfix">
+                <div class="label">Kritik Uyarı Limiti</div>
+                <div class="value">
+                  <input type="number" class="criticalWarning" value="10" />
+                </div>
+              </div>
+
+              <div class="row warning-func clearfix">
+                <div class="value">
+                  <p><input id="custom-warning" type="checkbox" class="custom-warning-text" /> <label for="custom-warning"><strong>Özelleştirilmiş Uyarı Yazısı (onCountResult)</strong></label></p>
+                  <p>$(this.charCountEl).html("Son "+this.settings.warning+" karakter.");</p>
+                </div>
+              </div>
+
+              <button class="submit" type="submit">Özellikleri yükle</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="demo-block clearfix">
+
+          <div class="textarea-block">
+            <div class="textarea-wrap">
+              <textarea class="text-area count-char-2" data-jchar-name="char-count-2"></textarea>
+              <div class="char-count" data-jchar-select="char-count-2"></div>
+            </div>
+          </div>
+
+          <div class="options">
+            <form class="plugin-form with-callback" action="" novalidate="novalidate">
+
+              <div class="row clearfix">
+                <div class="label">Type</div>
+                <div class="value">
+                  <select class="type">
+                    <option value="default">default</option>
+                    <option value="twitter" selected="selected">twitter</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="row clearfix">
+                <div class="label">Karakter Limiti</div>
+                <div class="value">
+                  <input type="number" class="charLimit" value="100" />
+                </div>
+              </div>
+
+              <div class="row clearfix">
+                <div class="label">Uyarı Limiti</div>
+                <div class="value">
+                  <input type="number" class="warning" value="50" />
+                </div>
+              </div>
+
+              <div class="row clearfix">
+                <div class="label">Kritik Uyarı Limiti</div>
+                <div class="value">
+                  <input type="number" class="criticalWarning" value="30" />
+                </div>
+              </div>
+
+              <div class="row warning-func clearfix">
+                <div class="value">
+                  <p><strong>Uyarı Callback Fonksiyonu (onWarning)</strong></p>
+                  <p>$(this.charCountEl).html("Son "+this.settings.warning+" karakter.");</p>
+                </div>
+              </div>
+
+              <div class="row cwarning-func clearfix">
+                <div class="value">
+                  <p><strong>Kritik Uyarı Callback Fonksiyonu (onCriticalWarning)</strong></p>
+                  <p>$(this.charCountEl).html("Son "+this.settings.criticalWarning+" karakter.");</p>
+                </div>
+              </div>
+
+              <div class="row underzero-func clearfix">
+                <div class="value">
+                  <p><strong>Sıfırın Altı Callback Fonksiyonu (onUnderZero)</strong></p>
+                  <p>$(this.charCountEl).html(this.settings.charLimit+"'den fazla karakter girdiniz.");</p>
+                </div>
+              </div>
+
+              <button class="submit" type="submit">Özellikleri yükle</button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="documentation">
+        <h2>Dökümantasyon </h2>
+
+        <h3>Özellikler</h3>
+
+        <div class="clearfix">
+          <div class="column-md-6">
+
+            <div class="section clearfix">
+              <div class="label"><span class="code head">type</span> :</div>
+              <div class="info">
+                <p><span class="code">"default", "twitter" - (string)</span></p>
+              </div>
+              <p>Karakter sayacının gösterim şeklini tanımlar.</p>
+            </div>
+            
+            <div class="section clearfix">
+              <div class="label"><span class="code head">charLimit</span> :</div>
+              <div class="info">
+                <p><span class="code">140 - (integer)</span></p>
+              </div>
+              <p>Karakter limitini tanımlar.</p>
+            </div>
+            
+          </div>
+
+          <div class="column-md-6">
+
+            <div class="section clearfix">
+              <div class="label"><span class="code head">warning</span> :</div>
+              <div class="info">
+                <p><span class="code">20 - (integer)</span></p>
+              </div>
+              <p>İlk uyarı limitini tanımlar.</p>
+            </div>
+
+            <div class="section clearfix">
+              <div class="label"><span class="code head">criticalWarning</span> :</div>
+              <div class="info">
+                <p><span class="code">10 - (integer)</span></p>
+              </div>
+              <p>Kritik uyarı limitini tanımlar.</p>
+            </div>
+
+          </div>
+
+        </div>
+
+        <h3>Eventler</h3>
+
+        <div class="clearfix">
+          <div class="column-md-6">
+
+            <div class="section clearfix">
+              <div class="label"><span class="code head">onCountResult</span> :</div>
+              <div class="info">
+                <p><span class="code">function(){}</span></p>
+              </div>
+              <p>Karakter sayacının sonuç içeriğini değiştirmeye yarayan callback fonksiyonu.</p>
+            </div>
+            
+            <div class="section clearfix">
+              <div class="label"><span class="code head">onWarning</span> :</div>
+              <div class="info">
+                <p><span class="code">function(){}</span></p>
+              </div>
+              <p>Karakter sayısı warning limitinin altına indiği zaman çağırılan callback fonksiyonu.</p>
+            </div>
+            
+          </div>
+
+          <div class="column-md-6">
+
+            <div class="section clearfix">
+              <div class="label"><span class="code head">onCriticalWarning</span> :</div>
+              <div class="info">
+                <p><span class="code">function(){}</span></p>
+              </div>
+              <p>Karakter sayısı critical warning limitinin altına indiği zaman çağırılan callback fonksiyonu.</p>
+            </div>
+
+            <div class="section clearfix">
+              <div class="label"><span class="code head">onUnderZero</span> :</div>
+              <div class="info">
+                <p><span class="code">function(){}</span></p>
+              </div>
+              <p>Karakter sayısı sıfırın altına indiği zaman çağırılan callback fonksiyonu.</p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+      
+      <div id="footer">
+      	
+        <p>&copy; 2016 - Cagdas ISIK (cyasam)</p>
+      
+      </div>
+      
+    </div>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jcountchar.min.js"></script>
+    <script type="text/javascript" src="js/index.min.js"></script>
+
+  </body>
+</html>
